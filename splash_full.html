@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofyane Hajoubi - Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="Favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #888;
+            --font-main: 'Inter', sans-serif;
+            --header-height: 150px;
+            /* Space for the header logo */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            /* Initial state: no scroll */
+        }
+
+        body.scroll-enabled {
+            overflow-y: auto;
+        }
+
+        /* Section 1: Home Splash (The Intro) */
+        #home-splash {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+            transition: height 1s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        #home-splash.collapsed {
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* Logo Wrapper (The Animation Container) */
+        #logo-wrapper {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: auto;
+            z-index: 9999;
+            transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+            pointer-events: none;
+            /* Let clicks pass through */
+        }
+
+        /* Final State: Header Logo */
+        #logo-wrapper.header-mode {
+            top: 20px;
+            left: 50%;
+            width: 100px;
+            transform: translate(-50%, 0);
+        }
+
+        /* Section 2: Works Section */
+        #works-section {
+            padding: 0 4rem 4rem;
+            margin-top: 150px;
+            /* Clearance for the fixed logo */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
+            /* Delay to wait for logo move */
+            min-height: 100vh;
+        }
+
+        #works-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        /* Work Cards Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 4/3;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+
+        .card-image {
+            flex: 1;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 2rem;
+        }
+
+        .card-info {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-category {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+        }
+
+        /* Section 3: About Section */
+        #about-section {
+            padding: 4rem;
+            background-color: #0a0a0a;
+            min-height: 50vh;
+            border-top: 1px solid #222;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .about-content p {
+            color: #aaa;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #works-section {
+                padding: 0 2rem 4rem;
+            }
+
+            #about-section {
+                padding: 4rem 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .work-card {
+                aspect-ratio: 3/2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Section 1: Home Splash (Placeholder for layout flow, logo is fixed above) -->
+    <div id="home-splash">
+        <!-- Logo is fixed outside, so this is visually empty but takes spacing -->
+    </div>
+
+    <!-- The Fixed Logo Wrapper -->
+    <div id="logo-wrapper">
+        <dotlottie-player src="https://lottie.host/9cd6e134-a4ab-4256-bf1a-435586ce4ac0/DrLMMppRQj.lottie"
+            background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay>
+        </dotlottie-player>
+    </div>
+
+    <!-- Section 2: Works Section -->
+    <section id="works-section">
+        <h2 class="section-title">Selected Works</h2>
+        <div class="works-grid">
+            <a href="#" class="work-card">
+                <div class="card-image">Project 01</div>
+                <div class="card-info">
+                    <h3 class="card-title">Kinetic Type</h3>
+                    <span class="card-category">Typography</span>
+                </div>
+            </a>
+            <a href="#" class="work-card">
+                <div class="card-image">Project 02</div>
+                <div class="card-info">
+                    <h3 class="card-title">Abstract Flow</h3>
+                    <span class="card-category">Motion</span>
+                </div>
+            </a>
+            <a href="#" class="work-card">
+                <div class="card-image">Project 03</div>
+                <div class="card-info">
+                    <h3 class="card-title">Neon Lights</h3>
+                    <span class="card-category">3D Design</span>
+                </div>
+            </a>
+            <a href="#" class="work-card">
+                <div class="card-image">Project 04</div>
+                <div class="card-info">
+                    <h3 class="card-title">Dark Matters</h3>
+                    <span class="card-category">Branding</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 3: About Section -->
+    <section id="about-section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I am a motion designer and creative developer based in Paris. I specialize in creating immersive digital
+                experiences that blend animation, interaction, and design.</p>
+            <p>My work explores the intersection of kinetic typography and generative art.</p>
+        </div>
+        <div class="about-image"
+            style="background: #111; height: 300px; display: flex; align-items: center; justify-content: center; color: #333;">
+            Profile Image
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = document.querySelector('dotlottie-player');
+            const logoWrapper = document.getElementById('logo-wrapper');
+            const worksSection = document.getElementById('works-section');
+            const homeSplash = document.getElementById('home-splash');
+            const body = document.body;
+
+            // Wait for the animation to complete
+            if (player) {
+                player.addEventListener('complete', () => {
+
+                    // 1. Transform Logo to Header
+                    logoWrapper.classList.add('header-mode');
+
+                    // 2. Collapse Home Section (Optional: effectively removing the "splash" page spacer)
+                    // If you want to keep the gap, remove this line. 
+                    // Based on "margin-top: 150px so it doesn't overlap", collapsing creates the perfect flow.
+                    homeSplash.classList.add('collapsed');
+
+                    // 3. Fade in Works Section & Allow Scrolling
+                    worksSection.classList.add('visible');
+
+                    // Allow scrolling
+                    body.classList.add('scroll-enabled');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

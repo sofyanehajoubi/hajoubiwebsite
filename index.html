@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofyane Hajoubi - Artist Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="Favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body>
+    <!-- 
+        Splash Screen / Header Animation Container 
+        - Wrapper controls the size and positioning.
+        - Player fills the width of the wrapper.
+    -->
+    <!-- Splash / Animation Section -->
+    <section id="splash-section">
+        <div id="logo-wrapper">
+            <dotlottie-player id="lottie-player"
+                src="https://lottie.host/9cd6e134-a4ab-4256-bf1a-435586ce4ac0/DrLMMppRQj.lottie"
+                background="transparent" speed="1" style="width: 100%; height: auto; display: block;" autoplay
+                preserveAspectRatio="xMidYMid meet"></dotlottie-player>
+        </div>
+        <div id="splash-scroll-hint">
+            <div class="splash-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <div class="cursor"></div>
+
+    <header>
+        <div class="logo"><a href="#splash-section">Sofyane Hajoubi</a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="reveal-holder">
+                <h1 class="reveal-text">Creative<br>Developer</h1>
+            </div>
+            <div class="reveal-holder">
+                <p class="subtitle fade-up delay-1">Creating digital experiences and interactive installations.</p>
+            </div>
+            <div class="scroll-indicator fade-up delay-2">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works">
+            <div class="section-title fade-up">Selected Works</div>
+            <div class="works-list fade-up delay-1">
+                <div class="works-header">
+                    <span>Project</span>
+                    <span>Category</span>
+                    <span>Year</span>
+                </div>
+
+                <a href="interactive.html" class="work-row">
+                    <span class="work-title">Neural Mirror</span>
+                    <span class="work-category">Interactive</span>
+                    <span class="work-year">2024</span>
+                </a>
+
+                <a href="installation.html" class="work-row">
+                    <span class="work-title">Void Structure</span>
+                    <span class="work-category">Installation</span>
+                    <span class="work-year">2023</span>
+                </a>
+
+                <a href="projection.html" class="work-row">
+                    <span class="work-title">City Pulse</span>
+                    <span class="work-category">Projection Mapping</span>
+                    <span class="work-year">2023</span>
+                </a>
+
+                <a href="motion.html" class="work-row">
+                    <span class="work-title">Kinetic Type</span>
+                    <span class="work-category">Motion Graphic</span>
+                    <span class="work-year">2022</span>
+                </a>
+
+                <a href="interactive.html" class="work-row">
+                    <span class="work-title">Touch of Sound</span>
+                    <span class="work-category">Interactive</span>
+                    <span class="work-year">2022</span>
+                </a>
+
+                <a href="installation.html" class="work-row">
+                    <span class="work-title">Ephemeral</span>
+                    <span class="work-category">Installation</span>
+                    <span class="work-year">2021</span>
+                </a>
+
+                <a href="projection.html" class="work-row">
+                    <span class="work-title">Forest Spirits</span>
+                    <span class="work-category">Projection Mapping</span>
+                    <span class="work-year">2021</span>
+                </a>
+
+                <a href="motion.html" class="work-row">
+                    <span class="work-title">Abstract Flow</span>
+                    <span class="work-category">Motion Graphic</span>
+                    <span class="work-year">2020</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-container fade-up">
+            <div class="about-image">
+                <img src="Photos/My photo.jpg" alt="Sofyane Hajoubi">
+            </div>
+            <div class="about-text">
+                <h1>About</h1>
+                <p>As a dedicated digital artist and researcher, I am passionate about exploring the dynamic interplay
+                    between sound and digital graphic arts. My studies at the National Institute of Fine Arts in Tetouan
+                    have deepened my fascination with how modern technology can elevate artistic expression—especially
+                    through the seamless synchronisation of audio and visual elements.</p>
+                <p>Spanning various mediums and techniques, my work reflects a strong commitment to pushing the
+                    boundaries of digital art, driven by a genuine love for the technical and creative possibilities of
+                    the medium.</p>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="fade-up">
+            <div class="section-title">Contact</div>
+            <div class="contact-list">
+                <a href="mailto:sofyanehajoubi@gmail.com" class="contact-row">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">sofyanehajoubi@gmail.com</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <a href="https://www.behance.net/sofyanehajoubi" target="_blank" rel="noopener noreferrer"
+                    class="contact-row">
+                    <span class="contact-label">Behance</span>
+                    <span class="contact-value">behance.net/sofyanehajoubi</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <a href="https://www.instagram.com/hajoubi.art?igsh=MTYwNGlnNG9qMzZtbQ==" target="_blank"
+                    rel="noopener noreferrer" class="contact-row">
+                    <span class="contact-label">Instagram</span>
+                    <span class="contact-value">hajoubi.art</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
