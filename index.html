@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/xyi7envvly.js" async type="module"></script>
 </head>
 
 <body>
@@ -19,15 +20,14 @@
         - Wrapper controls the size and positioning.
         - Player fills the width of the wrapper.
     -->
-    <!-- Splash / Animation Section -->
+    <!-- Splash / Video Background Section -->
     <section id="splash-section">
-        <div id="logo-wrapper">
-            <dotlottie-player id="lottie-player"
-                src="https://lottie.host/9cd6e134-a4ab-4256-bf1a-435586ce4ac0/DrLMMppRQj.lottie"
-                background="transparent" speed="1" style="width: 100%; height: auto; display: block;" autoplay
-                preserveAspectRatio="xMidYMid meet"></dotlottie-player>
+        <!-- Wistia fullscreen background video -->
+        <div id="video-bg">
+            <wistia-player id="wistia-player" media-id="xyi7envvly" aspect="1.7777777777777777" autoplay playsinline>
+            </wistia-player>
         </div>
-        <div id="splash-scroll-hint">
+        <div id="splash-scroll-hint" class="visible">
             <div class="splash-scroll-line"></div>
             <span>Scroll</span>
         </div>
@@ -66,6 +66,100 @@
             </div>
         </section>
 
+        <!-- Projects Gallery Section -->
+        <section id="gallery">
+            <div class="gallery-inner">
+                <div class="section-title fade-up">Gallery</div>
+
+                <!-- Project 01 — image LEFT, text RIGHT -->
+                <div class="gallery-item">
+                    <a href="interactive.html" class="gallery-img-link g-slide-left">
+                        <img src="01 Interactive Posters.jpg" alt="Interactive Posters" class="gallery-img">
+                    </a>
+                    <a href="interactive.html" class="gallery-text g-slide-right">
+                        <h2 class="gallery-title">Interactive Posters</h2>
+                        <p class="gallery-subtitle">Merging Physical and Digital Realms via Augmented Reality</p>
+                        <p class="gallery-desc">This project features four interactive posters merging physical and
+                            digital realms through Augmented Reality. Using smart devices, viewers trigger 42-second
+                            animations (60 fps) that overlay 71&nbsp;×&nbsp;100&nbsp;cm prints. By integrating graphic
+                            and audio elements, static images transform into living narratives, turning reality into
+                            imagination and making the audience an integral part of the artwork's vibrant, multi-layered
+                            digital world.</p>
+                    </a>
+                </div>
+
+                <!-- Project 02 — image RIGHT, text LEFT -->
+                <div class="gallery-item gallery-item--reverse">
+                    <a href="projection.html" class="gallery-img-link g-slide-right">
+                        <img src="02 Harmony of Sound and Image Through Mapping.jpg"
+                            alt="Harmony of Sound and Image Through Mapping" class="gallery-img">
+                    </a>
+                    <a href="projection.html" class="gallery-text g-slide-left">
+                        <h2 class="gallery-title">Harmony of Sound and Image Through Mapping</h2>
+                        <p class="gallery-subtitle">Audio-Visual Synchronization via Optical Projection</p>
+                        <p class="gallery-desc">Created during a video mapping workshop at the French Institute of
+                            Tetouan, this artwork explores the synchronization of sound and image via optical
+                            projection. Sound compositions trigger and transform visual elements, resulting in an
+                            immersive multisensory environment. By blending light, shape, and movement with acoustic
+                            textures, the project creates a seamless dialogue between audio and visual realms for the
+                            audience.</p>
+                    </a>
+                </div>
+
+                <!-- Project 03 — image LEFT, text RIGHT -->
+                <div class="gallery-item">
+                    <a href="motion.html" class="gallery-img-link g-slide-left">
+                        <img src="03 Synchronized Motion Graphics.jpg" alt="Synchronized Motion Graphics"
+                            class="gallery-img">
+                    </a>
+                    <a href="motion.html" class="gallery-text g-slide-right">
+                        <h2 class="gallery-title">Synchronized Motion Graphics</h2>
+                        <p class="gallery-subtitle">Fusing Sound and Movement</p>
+                        <p class="gallery-desc">Sound serves as the foundation for this motion graphics project. Driven
+                            by the dynamic rhythm of "Ants" by The Glitch Mob, the letters of "SOFYANE HAJOUBI" animate
+                            in perfect synchronization with audio variations. Using Adobe After Effects, characters
+                            shift through scaling, rotation, and color transitions, transforming typography into a
+                            rhythmic visual performance guided entirely by the track's energetic pulse.</p>
+                    </a>
+                </div>
+
+                <!-- Project 04 — image RIGHT, text LEFT -->
+                <div class="gallery-item gallery-item--reverse">
+                    <a href="installation.html" class="gallery-img-link g-slide-right">
+                        <img src="04 The Singularity of Information.jpg" alt="The Singularity of Information"
+                            class="gallery-img">
+                    </a>
+                    <a href="installation.html" class="gallery-text g-slide-left">
+                        <h2 class="gallery-title">The Singularity of Information</h2>
+                        <p class="gallery-subtitle">Interactive Installation and Cognitive Confinement</p>
+                        <p class="gallery-desc">This interactive installation explores propaganda as "personalized
+                            content" using infrared motion-tracking. Digital orbits shadow viewers on a white sphere,
+                            creating a news stream that feels universal but is uniquely targeted. The deception of this
+                            cognitive confinement is only unmasked through the "Other," where juxtaposed digital squares
+                            reveal how screens can transform from windows into tools of individual distortion.</p>
+                    </a>
+                </div>
+
+                <!-- Project 05 — image LEFT, text RIGHT -->
+                <div class="gallery-item">
+                    <a href="discoboy.html" class="gallery-img-link g-slide-left">
+                        <img src="05 Rhythmic Animation Inspired by Disco Boy.jpg"
+                            alt='Rhythmic Animation Inspired by "Disco Boy"' class="gallery-img">
+                    </a>
+                    <a href="discoboy.html" class="gallery-text g-slide-right">
+                        <h2 class="gallery-title">Rhythmic Animation Inspired by "Disco Boy"</h2>
+                        <p class="gallery-subtitle">Blending Manual Artistry with Digital Motion</p>
+                        <p class="gallery-desc">Merging manual drawing with digital editing, this project interprets a
+                            dance scene from Disco Boy. The process involved creating 560 hand-drawn frames synchronized
+                            to a frantic rhythmic progression. These frames were scanned and integrated into a 12 fps
+                            video format. The final animation captures the character's transition from calm to
+                            intensity, elegantly blending traditional artistry with modern digital technology.</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Works Section -->
         <section id="works">
             <div class="section-title fade-up">Selected Works</div>
@@ -77,51 +171,39 @@
                 </div>
 
                 <a href="interactive.html" class="work-row">
-                    <span class="work-title">Neural Mirror</span>
+                    <span class="work-title">Interactive Posters</span>
+                    <span class="work-category">Augmented Reality</span>
+                    <span class="work-year">2024</span>
+                </a>
+
+                <a href="projection.html" class="work-row">
+                    <span class="work-title">Harmony of Sound and Image Through Mapping</span>
+                    <span class="work-category">Projection Mapping</span>
+                    <span class="work-year">2024</span>
+                </a>
+
+                <a href="motion.html" class="work-row">
+                    <span class="work-title">Synchronized Motion Graphics</span>
+                    <span class="work-category">Motion Graphic</span>
+                    <span class="work-year">2023</span>
+                </a>
+
+                <a href="installation.html" class="work-row">
+                    <span class="work-title">The Singularity of Information</span>
+                    <span class="work-category">Interactive Installation</span>
+                    <span class="work-year">2025</span>
+                </a>
+
+                <a href="interactive.html" class="work-row">
+                    <span class="work-title">Body Interactivity</span>
                     <span class="work-category">Interactive</span>
                     <span class="work-year">2024</span>
                 </a>
 
-                <a href="installation.html" class="work-row">
-                    <span class="work-title">Void Structure</span>
-                    <span class="work-category">Installation</span>
-                    <span class="work-year">2023</span>
-                </a>
-
-                <a href="projection.html" class="work-row">
-                    <span class="work-title">City Pulse</span>
-                    <span class="work-category">Projection Mapping</span>
-                    <span class="work-year">2023</span>
-                </a>
-
                 <a href="motion.html" class="work-row">
-                    <span class="work-title">Kinetic Type</span>
-                    <span class="work-category">Motion Graphic</span>
-                    <span class="work-year">2022</span>
-                </a>
-
-                <a href="interactive.html" class="work-row">
-                    <span class="work-title">Touch of Sound</span>
-                    <span class="work-category">Interactive</span>
-                    <span class="work-year">2022</span>
-                </a>
-
-                <a href="installation.html" class="work-row">
-                    <span class="work-title">Ephemeral</span>
-                    <span class="work-category">Installation</span>
-                    <span class="work-year">2021</span>
-                </a>
-
-                <a href="projection.html" class="work-row">
-                    <span class="work-title">Forest Spirits</span>
-                    <span class="work-category">Projection Mapping</span>
-                    <span class="work-year">2021</span>
-                </a>
-
-                <a href="motion.html" class="work-row">
-                    <span class="work-title">Abstract Flow</span>
-                    <span class="work-category">Motion Graphic</span>
-                    <span class="work-year">2020</span>
+                    <span class="work-title">Rhythmic Animation Inspired by "Disco Boy"</span>
+                    <span class="work-category">Stop Motion</span>
+                    <span class="work-year">2024</span>
                 </a>
             </div>
         </section>

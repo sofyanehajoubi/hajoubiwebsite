@@ -4,65 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motion Graphic - Sofyane Hajoubi</title>
+    <title>Synchronized Motion Graphics — Sofyane Hajoubi</title>
     <link rel="icon" type="image/svg+xml" href="Favicon.svg">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="stylesheet" href="project.css">
 </head>
 
 <body>
-    <div id="logo-wrapper">
-        <dotlottie-player src="https://lottie.host/9cd6e134-a4ab-4256-bf1a-435586ce4ac0/DrLMMppRQj.lottie"
-            background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay></dotlottie-player>
-    </div>
-    <div class="cursor"></div>
+
     <header>
         <div class="logo"><a href="index.html">Sofyane Hajoubi</a></div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="works.html" class="active">Works</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#works">Works</a></li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
-    <main id="motion">
-        <section class="hero" style="min-height: 40vh; padding-top: 150px;">
-            <div class="reveal-holder">
-                <h1 class="reveal-text">Motion<br>Graphic</h1>
-            </div>
-        </section>
+    <main class="project-page">
 
-        <section class="works-list fade-up delay-1">
-            <div class="works-header">
-                <span>Project</span>
-                <span>Type</span>
-                <span>Year</span>
-            </div>
+        <div class="project-back">
+            <a href="index.html#gallery">← Back to Gallery</a>
+        </div>
 
-            <div class="work-row">
-                <span class="work-title">Kinetic Type</span>
-                <span class="work-category">Experimental Typography</span>
-                <span class="work-year">2022</span>
-            </div>
+        <h1 class="project-title">Synchronized Motion Graphics</h1>
+        <p class="project-subtitle">Fusing Sound and Movement</p>
 
-            <div class="work-row">
-                <span class="work-title">Abstract Flow</span>
-                <span class="work-category">Generative Animation</span>
-                <span class="work-year">2020</span>
-            </div>
-        </section>
+        <div class="video-wrapper">
+            <iframe
+                src="https://player.vimeo.com/video/1167970244?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&share=0&watch_later=0"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Synchronised Motion Graphics">
+            </iframe>
+        </div>
+
+        <div class="project-description">
+            <p>Sound serves as the foundation for this motion graphics project. Driven by the dynamic rhythm of "Ants"
+                by The Glitch Mob, the letters of "SOFYANE HAJOUBI" animate in perfect synchronization with audio
+                variations. Using Adobe After Effects, characters shift through scaling, rotation, and color
+                transitions, transforming typography into a rhythmic visual performance guided entirely by the track's
+                energetic pulse.</p>
+        </div>
+
     </main>
 
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="script.js"></script>
 </body>
 

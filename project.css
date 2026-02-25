@@ -1,0 +1,179 @@
+/* =========================================
+   Shared Project Detail Page Styles
+   Matches the main portfolio dark aesthetic
+   ========================================= */
+
+:root {
+    --bg-color: #050505;
+    --text-color: #f0f0f0;
+    --accent-color: #888;
+    --font-main: 'Inter', sans-serif;
+    --border-color: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #000;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ── Header ── */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.logo a {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text-color);
+}
+
+/* ── Main content ── */
+.project-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 9rem 4rem 8rem;
+}
+
+/* Back link */
+.project-back {
+    margin-bottom: 2.5rem;
+}
+
+.project-back a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+.project-back a:hover {
+    color: var(--text-color);
+}
+
+/* Title & subtitle */
+.project-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.project-subtitle {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+}
+
+/* ── Video ── */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Wistia web-component fills the same wrapper */
+.wistia-wrapper {
+    position: relative;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.wistia-wrapper wistia-player {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ── Description ── */
+.project-description {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2.5rem;
+}
+
+.project-description p {
+    font-size: 1.05rem;
+    color: #aaa;
+    line-height: 1.85;
+    max-width: 800px;
+    text-align: justify;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    header {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .project-page {
+        padding: 7rem 1.5rem 5rem;
+    }
+}

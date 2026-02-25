@@ -167,6 +167,160 @@ header {
     padding-left: 4rem;
 }
 
+/* =========================================
+   Projects Gallery Section
+   ========================================= */
+
+#gallery {
+    background-color: #fff;
+    padding: 6rem 0;
+}
+
+/* Override section-title colour on white bg */
+#gallery .section-title {
+    color: #888;
+}
+
+.gallery-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* Each project row */
+.gallery-item {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+/* ── Gallery slide-in animations ── */
+.g-slide-left,
+.g-slide-right {
+    opacity: 0;
+    transition:
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.85s ease;
+    will-change: transform, opacity;
+}
+
+.g-slide-left {
+    transform: translateX(-70px);
+}
+
+.g-slide-right {
+    transform: translateX(70px);
+}
+
+/* Text blocks get a slight delay so they follow the image */
+.gallery-text.g-slide-left,
+.gallery-text.g-slide-right {
+    transition-delay: 0.15s;
+}
+
+/* Triggered by JS IntersectionObserver */
+.g-slide-left.in-view,
+.g-slide-right.in-view {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* Reverse: image goes to the right */
+.gallery-item--reverse {
+    direction: rtl;
+    /* flip column order */
+}
+
+.gallery-item--reverse>* {
+    direction: ltr;
+    /* restore text direction inside */
+}
+
+/* Square image container */
+.gallery-img-link {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 16px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.4s ease;
+}
+
+/* Hover: subtle zoom + slight fade */
+.gallery-img-link:hover .gallery-img {
+    transform: scale(1.06);
+    opacity: 0.88;
+}
+
+/* Text block (now an <a> tag — reset link styles) */
+.gallery-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gallery-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    transition: opacity 0.3s;
+}
+
+.gallery-text:hover .gallery-title {
+    opacity: 0.6;
+}
+
+.gallery-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+}
+
+.gallery-desc {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+    .gallery-inner {
+        padding: 0 2rem;
+    }
+
+    .gallery-item,
+    .gallery-item--reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .gallery-title {
+        font-size: 1.2rem;
+    }
+}
+
 /* Works List (Archive Style) */
 .works-list {
     padding: 0 4rem 8rem;
@@ -451,13 +605,29 @@ header {
     z-index: 0;
 }
 
-#logo-wrapper {
-    width: 400px;
-    max-width: 85vw;
-    line-height: 0;
-    font-size: 0;
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     pointer-events: none;
 }
+
+#video-bg wistia-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh;
+    /* 16:9 */
+    height: 56.25vw;
+    /* 16:9 */
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+}
+
 
 /* Scroll hint: hidden until animation completes */
 #splash-scroll-hint {
@@ -484,10 +654,4 @@ header {
     width: 50px;
     height: 1px;
     background-color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-    #logo-wrapper {
-        width: 85vw;
-    }
 }

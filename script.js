@@ -4,29 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     // =========================================
-    // Splash Section Animation Logic
-    // - Plays once on page load in its own section.
-    // - Nav links (Work, About) navigate to their anchors
-    //   without ever replaying the animation.
+    // Wistia Player: Freeze on Last Frame
     // =========================================
-    const player = document.getElementById('lottie-player');
-    const splashScrollHint = document.getElementById('splash-scroll-hint');
-
-    if (player) {
-        player.addEventListener('complete', () => {
-            // Freeze on the last frame (no glitch)
-            player.pause();
-
-            // Reveal the scroll-down hint after the animation ends
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    if (splashScrollHint) {
-                        splashScrollHint.classList.add('visible');
-                    }
-                });
+    window._wq = window._wq || [];
+    window._wq.push({
+        id: 'xyi7envvly',
+        onReady: function (video) {
+            video.bind('end', function () {
+                var duration = video.duration();
+                video.time(Math.max(0, duration - 0.5));
+                video.pause();
+                return video.unbind;
             });
-        });
-    }
+        }
+    });
+
+
 
     // Custom Cursor Movement
     document.addEventListener('mousemove', (e) => {
@@ -94,4 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animatedElements = document.querySelectorAll('.reveal-text, .fade-up');
     animatedElements.forEach(el => observer.observe(el));
+
+    // =========================================
+    // Gallery Slide-In Observer
+    // Watches each .gallery-item; when it enters
+    // the viewport, fires .in-view on both the
+    // image link and the text block simultaneously.
+    // The text's CSS transition-delay creates the
+    // synchronized stagger automatically.
+    // =========================================
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                item.querySelectorAll('.g-slide-left, .g-slide-right').forEach(el => {
+                    el.classList.add('in-view');
+                });
+                galleryObserver.unobserve(item); // animate once
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        galleryObserver.observe(item);
+    });
 });
