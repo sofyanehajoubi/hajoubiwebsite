@@ -163,17 +163,67 @@ header {
     text-align: justify;
 }
 
-/* ── Mobile ── */
+/* ── Mobile (≤ 768px) ── */
 @media (max-width: 768px) {
     header {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.2rem;
     }
 
     .nav-links {
         gap: 1.2rem;
     }
 
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
     .project-page {
-        padding: 7rem 1.5rem 5rem;
+        padding: 6.5rem 1.2rem 4rem;
+    }
+
+    .project-back {
+        margin-bottom: 1.5rem;
+    }
+
+    .project-title {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+        letter-spacing: -0.5px;
+        margin-bottom: 0.6rem;
+    }
+
+    .project-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .video-wrapper {
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-description {
+        padding-top: 1.5rem;
+    }
+
+    .project-description p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+}
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+    .project-title {
+        font-size: clamp(1.4rem, 8vw, 2rem);
+    }
+
+    .project-page {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .logo a {
+        font-size: 0.85rem;
     }
 }
