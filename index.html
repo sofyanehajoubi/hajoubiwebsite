@@ -249,9 +249,75 @@
                 </a>
             </div>
         </section>
+
+        <!-- Particle Animation Section -->
+        <section id="particle-section">
+            <!-- Hidden image source for the particle slider -->
+            <div class="particle-slides">
+                <div id="first-slide" class="slide"
+                    data-src="data:image/png;base64,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">
+                </div>
+            </div>
+            <canvas id="particle-canvas"></canvas>
+        </section>
     </main>
 
     <script src="script.js"></script>
+
+    <!-- Particle Slider Initialization -->
+    <script>
+        (function () {
+            var sectionVisible = false;
+
+            function initParticle() {
+                if (sectionVisible) return;
+                sectionVisible = true;
+
+                var psScript = document.createElement('script');
+                psScript.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js';
+                psScript.onload = function () {
+                    // Give the base64 image time to decode
+                    setTimeout(function () {
+                        var section = document.getElementById('particle-section');
+                        var canvas = document.getElementById('particle-canvas');
+
+                        // ParticleSlider needs a <canvas class="draw"> on the page.
+                        // We give it the one we already placed inside the section.
+                        canvas.classList.add('draw');
+
+                        // Hide the slides wrapper (only used as data source)
+                        document.querySelector('.particle-slides').style.display = 'none';
+
+                        var ps = new ParticleSlider({
+                            ptlGap: 1,
+                            ptlSize: 1,
+                            width: section.offsetWidth,
+                            height: section.offsetHeight,
+                            color: '#ffffff',
+                            monochrome: true
+                        });
+
+                        // Refresh on click inside the section
+                        section.addEventListener('click', function () { ps.init(true); }, false);
+                    }, 500);
+                };
+                document.body.appendChild(psScript);
+            }
+
+            // Lazy-load: only initialise when the section scrolls into view
+            var observer = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    initParticle();
+                    observer.disconnect();
+                }
+            }, { threshold: 0.1 });
+
+            window.addEventListener('load', function () {
+                var section = document.getElementById('particle-section');
+                if (section) observer.observe(section);
+            }, false);
+        })();
+    </script>
 </body>
 
 </html>
