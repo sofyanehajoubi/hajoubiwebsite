@@ -29,7 +29,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ── Header ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Header ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 header {
     position: fixed;
     top: 0;
@@ -55,12 +55,14 @@ header {
 }
 
 .nav-links {
+        pointer-events: auto;
     list-style: none;
     display: flex;
     gap: 2.5rem;
 }
 
-.nav-links a {
+
+    .nav-links a {
     color: var(--accent-color);
     text-decoration: none;
     font-size: 0.8rem;
@@ -73,7 +75,7 @@ header {
     color: var(--text-color);
 }
 
-/* ── Main content ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main content ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .project-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -116,7 +118,7 @@ header {
     margin-bottom: 3rem;
 }
 
-/* ── Video ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Video ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -149,7 +151,7 @@ header {
     height: 100%;
 }
 
-/* ── Description ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Description ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .project-description {
     border-top: 1px solid var(--border-color);
     padding-top: 2.5rem;
@@ -163,16 +165,18 @@ header {
     text-align: justify;
 }
 
-/* ── Mobile (≤ 768px) ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Mobile (ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 768px) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 @media (max-width: 768px) {
     header {
         padding: 1rem 1.2rem;
     }
 
     .nav-links {
+        pointer-events: auto;
         gap: 1.2rem;
     }
 
+    
     .nav-links a {
         font-size: 0.75rem;
     }
@@ -213,7 +217,7 @@ header {
     }
 }
 
-/* ── Small phones (≤ 480px) ── */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Small phones (ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 480px) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 @media (max-width: 480px) {
     .project-title {
         font-size: clamp(1.4rem, 8vw, 2rem);
@@ -227,3 +231,81 @@ header {
         font-size: 0.85rem;
     }
 }
+/* Hamburger Menu Base */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    header > nav {
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(10px);
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        gap: 2.5rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 0;
+    }
+
+    
+    .nav-links a {
+        font-size: 1.4rem !important;
+        letter-spacing: 0.15em;
+        color: #fff !important;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+    }
+    
+    .nav-links a.active {
+        opacity: 1;
+    }
+}
+
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0 !important;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px) !important;
+}
+

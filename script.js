@@ -111,4 +111,56 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.gallery-item').forEach(item => {
         galleryObserver.observe(item);
     });
+
+    // Back to Top functionality for Mobile
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Scroll Spy for Navigation Links
+    const sections = document.querySelectorAll('section[id], main[id]');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    if (sections.length > 0 && navItems.length > 0) {
+        window.addEventListener('scroll', () => {
+            let current = 'home'; // Default to home at the very top
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Use a smaller threshold or allow top detection
+                if (window.scrollY >= (sectionTop - window.innerHeight / 2)) {
+                    if (section.getAttribute('id')) {
+                        current = section.getAttribute('id');
+                    }
+                }
+            });
+
+            navItems.forEach(a => {
+                a.classList.remove('active');
+                const href = a.getAttribute('href') || '';
+                if (href.includes(`#${current}`)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+        
+        // Trigger initial check
+        window.dispatchEvent(new Event('scroll'));
+    }
 });
+
+
