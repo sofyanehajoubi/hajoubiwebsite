@@ -29,53 +29,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Header ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 4rem;
-    border-bottom: 1px solid var(--border-color);
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-}
-
-.logo a {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.nav-links {
-        pointer-events: auto;
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-}
-
-
-    .nav-links a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--text-color);
-}
-
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main content ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ── Main content ── */
 .project-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -118,7 +72,7 @@ header {
     margin-bottom: 3rem;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Video ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ── Video ── */
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -151,7 +105,7 @@ header {
     height: 100%;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Description ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ── Description ── */
 .project-description {
     border-top: 1px solid var(--border-color);
     padding-top: 2.5rem;
@@ -165,24 +119,12 @@ header {
     text-align: justify;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Mobile (ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 768px) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* =========================================
+   Mobile (≤ 768px)
+   ========================================= */
 @media (max-width: 768px) {
-    header {
-        padding: 1rem 1.2rem;
-    }
-
-    .nav-links {
-        pointer-events: auto;
-        gap: 1.2rem;
-    }
-
-    
-    .nav-links a {
-        font-size: 0.75rem;
-    }
-
     .project-page {
-        padding: 6.5rem 1.2rem 4rem;
+        padding: 6.5rem 1.5rem 4rem;
     }
 
     .project-back {
@@ -217,7 +159,9 @@ header {
     }
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Small phones (ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 480px) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* =========================================
+   Small phones (≤ 480px)
+   ========================================= */
 @media (max-width: 480px) {
     .project-title {
         font-size: clamp(1.4rem, 8vw, 2rem);
@@ -226,86 +170,4 @@ header {
     .project-page {
         padding: 6rem 1rem 3rem;
     }
-
-    .logo a {
-        font-size: 0.85rem;
-    }
 }
-/* Hamburger Menu Base */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 1002;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: #fff;
-    transition: all 0.3s;
-}
-
-@media (max-width: 768px) {
-    header > nav {
-        position: absolute;
-        pointer-events: none;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        pointer-events: auto;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        right: -100%;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(5, 5, 5, 0.95);
-        backdrop-filter: blur(10px);
-        justify-content: center;
-        align-items: center;
-        transition: right 0.4s ease;
-        z-index: 1000;
-        gap: 2.5rem;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .nav-links li {
-        margin: 0;
-    }
-
-    
-    .nav-links a {
-        font-size: 1.4rem !important;
-        letter-spacing: 0.15em;
-        color: #fff !important;
-        opacity: 0.5;
-        transition: opacity 0.3s;
-    }
-    
-    .nav-links a.active {
-        opacity: 1;
-    }
-}
-
-
-.menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px) !important;
-}
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0 !important;
-}
-.menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px) !important;
-}
-

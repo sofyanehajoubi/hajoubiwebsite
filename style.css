@@ -565,13 +565,12 @@ header::before {
         padding: 1.2rem 1.5rem;
     }
 
+    /* Remove nav wrapper from flex flow so logo + toggle sit at opposite ends */
     header > nav {
         position: absolute;
-        pointer-events: none;
     }
 
     .nav-links {
-        pointer-events: auto;
         display: flex;
         flex-direction: column;
         position: fixed;

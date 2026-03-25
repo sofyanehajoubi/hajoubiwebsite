@@ -39,35 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile Menu Toggle
-    menuToggle.addEventListener('click', () => {
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+    }
+
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
         menuToggle.classList.toggle('open');
-        toggleMenuIcon();
     });
 
-    // Close mobile menu when a link is clicked
+    // Close mobile menu when a nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                menuToggle.classList.remove('open');
-                toggleMenuIcon();
-            }
-        });
+        link.addEventListener('click', closeMenu);
     });
 
-    function toggleMenuIcon() {
-        const spans = menuToggle.querySelectorAll('span');
-        if (navLinks.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+    // Close mobile menu when tapping outside (on the overlay)
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') &&
+            !navLinks.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+            closeMenu();
         }
-    }
+    });
 
     // Intersection Observer for Animations
     const observerOptions = {
@@ -140,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let current = 'home'; // Default to home at the very top
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 // Use a smaller threshold or allow top detection
                 if (window.scrollY >= (sectionTop - window.innerHeight / 2)) {
                     if (section.getAttribute('id')) {
