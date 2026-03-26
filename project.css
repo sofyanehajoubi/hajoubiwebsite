@@ -69,7 +69,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--accent-color);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 /* ── Video ── */
@@ -77,11 +77,7 @@ body {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #111;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    margin-bottom: 4rem;
 }
 
 .video-wrapper iframe {
@@ -139,13 +135,11 @@ body {
 
     .project-subtitle {
         font-size: 0.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
     }
 
     .video-wrapper {
-        border-radius: 8px;
-        margin-bottom: 2rem;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        margin-bottom: 2.5rem;
     }
 
     .project-description {
