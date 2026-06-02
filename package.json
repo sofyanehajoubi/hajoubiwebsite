@@ -4,7 +4,6 @@
   "description": "",
   "main": "ps-0.9.js",
   "scripts": {
-    "build": "esbuild auth.js --bundle --outfile=auth.bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
