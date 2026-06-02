@@ -7,7 +7,7 @@
     <title>Projection Mapping: Avenida Theatre — Sofyane Hajoubi</title>
     <link rel="icon" type="image/svg+xml" href="../Favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../project.css">
@@ -43,19 +43,15 @@
         <h1 class="project-title">Projection Mapping: Avenida Theatre</h1>
         <p class="project-subtitle">Contemporary tribute to the city's rich heritage</p>
 
-        <div id="video-container" class="video-wrapper"></div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const container = document.getElementById('video-container');
-                if (container) {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = "https://player.vimeo.com/video/1193077184?badge=0&autopause=0&player_id=0&app_id=58479";
-                    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
-                    iframe.title = "Projection mapping on the Avenida Theatre in Tétouan.";
-                    container.appendChild(iframe);
-                }
-            });
-        </script>
+        <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1193077184?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                title="Projection mapping on the Avenida Theatre in Tétouan.">
+            </iframe>
+        </div>
 
         <div class="project-description">
             <p>Created to celebrate Tetouan’s designation as the 2026 Cultural Capital, this projection mapping installation transforms the historic façade of the Avenida Theatre. By merging dynamic visuals with synchronized soundscapes, the artwork serves as a contemporary tribute to the city's rich heritage. It bridges enduring historical legacy with digital innovation, breathing vibrant new life into an iconic architectural landmark.</p>
@@ -67,6 +63,7 @@
         &copy; 2026 | Sofyane Hajoubi | All rights reserved.
     </footer>
 
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="../script.js"></script>
 </body>
 
