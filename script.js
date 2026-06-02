@@ -160,14 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Project Routing & Layout Logic
     // =========================================
     const projectRoutes = {
-        "Projection mapping on the Avenida Theatre in Tétouan.": "Avenida/",
+        "Projection mapping on the Avenida Theatre in Tétouan.": "avenida/",
         "Interactive Posters": "interactive/",
         "Harmony of Sound and Image Through Mapping": "projection/",
         "Synchronized Motion Graphics": "motion/",
         "The Singularity of Information": "installation/",
         "Body Interactivity": "interactive/",
-        "Rhythmic Animation Inspired by \"Disco Boy\"": "Discoboy/",
-        "Rhythmic Animation Inspired by Disco Boy": "Discoboy/"
+        "Rhythmic Animation Inspired by \"Disco Boy\"": "discoboy/",
+        "Rhythmic Animation Inspired by Disco Boy": "discoboy/"
     };
 
     // Update gallery links and enforce alternating layout dynamically
