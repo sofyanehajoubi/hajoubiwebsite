@@ -4,6 +4,7 @@
   "description": "",
   "main": "ps-0.9.js",
   "scripts": {
+    "build": "echo \"Static site - no build required\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
