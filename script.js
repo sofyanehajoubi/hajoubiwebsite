@@ -155,6 +155,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger initial check
         window.dispatchEvent(new Event('scroll'));
     }
+
+    // =========================================
+    // Dynamic Project Routing & Layout Logic
+    // =========================================
+    const projectRoutes = {
+        "Projection mapping on the Avenida Theatre in Tétouan.": "avenida/index.html",
+        "Interactive Posters": "interactive/index.html",
+        "Harmony of Sound and Image Through Mapping": "projection/index.html",
+        "Synchronized Motion Graphics": "motion/index.html",
+        "The Singularity of Information": "installation/index.html",
+        "Body Interactivity": "interactive/index.html",
+        "Rhythmic Animation Inspired by \"Disco Boy\"": "discoboy/index.html",
+        "Rhythmic Animation Inspired by Disco Boy": "discoboy/index.html"
+    };
+
+    // Update gallery links and enforce alternating layout dynamically
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        // Enforce alternating layout (even indices get reversed class)
+        if (index % 2 === 0) {
+            item.classList.add('gallery-item--reverse');
+        } else {
+            item.classList.remove('gallery-item--reverse');
+        }
+
+        // Route updates
+        const titleEl = item.querySelector('.gallery-title');
+        if (titleEl) {
+            const titleText = titleEl.textContent.trim();
+            const route = projectRoutes[titleText];
+            if (route) {
+                item.querySelectorAll('a').forEach(link => {
+                    link.setAttribute('href', route);
+                });
+            }
+        }
+    });
+
+    // Update works list links dynamically
+    document.querySelectorAll('.work-row').forEach(row => {
+        const titleEl = row.querySelector('.work-title');
+        if (titleEl) {
+            const titleText = titleEl.textContent.trim();
+            const route = projectRoutes[titleText];
+            if (route) {
+                row.setAttribute('href', route);
+            }
+        }
+    });
 });
 
 
